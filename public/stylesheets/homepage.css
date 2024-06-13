@@ -1,0 +1,146 @@
+.categoryForm{
+    background-color:bisque;
+    display: flex;
+   margin-top: 70px;
+    align-items: center;
+    height: auto;
+    flex-direction: column;
+    
+}
+.categoryheading{
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-family: 'Raleway', sans-serif;
+}
+.categoryInput{
+    font-size: 1rem;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    border-radius: 5px;
+    font-family: 'Raleway', sans-serif;
+}
+.btn_sub{
+    width: 200px;
+    height: 40px;
+    margin-top: 20px;
+}
+.productForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    flex-direction: column;
+}
+.image_label{
+    font-size: 10px;
+}
+.redstar{
+    color: rgb(141, 69, 69);
+    font-size: 20px;
+}
+.image_box{
+    width: 210px;
+    padding-top: 10px;
+}
+.container {
+    width: auto;
+}
+.allCategoriesSection{
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+    padding: 0.5rem 1.2rem;
+    border-top: 1px solid black;
+
+}
+.allCategoriesHeading{
+
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+}
+.categoriesShowcase{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.individual{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: cadetblue;
+    padding: 0.5rem 0.8rem;
+    border-radius: 15px;
+}
+.category{
+    margin: 0;
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+    
+}
+.individual i {
+    margin-left: 7px;
+
+}
+.container {
+    justify-content: center;
+    display: flex;
+  }
+  .row {
+    justify-content: center;
+    display: flex;
+  }
+  .smallImagesContainer{
+    
+      box-sizing: border-box;
+      width: 100%;   
+    }
+    .imagesRow{
+        padding-left: 4rem;
+        width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .box {
+        border-style: solid;
+        height: 100%;
+        background-color: #ffffff;
+        width: 32%;
+        /* width: calc(33.333% - 40px); */
+      }
+ 
+.iconLink{
+    text-decoration: none;
+    color: white;
+}
+.iconLink:hover{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+.noCategoriesText{
+    justify-content: center;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+        font-size: 25px;
+    font-weight: bolder;
+}
+
+.editButton{
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    color: white;
+}
+.deleteButton{
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    color: white;
+}
+.padding{
+    padding-top: 0.5rem;
+}

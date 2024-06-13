@@ -1,0 +1,163 @@
+.aboutMainDiv {
+
+  max-width: 80%;
+  margin: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  z-index: 1;
+
+
+}
+
+.aboutFirstHead {
+  font-size: 4.563em;
+  font-family: 'roadstore', sans-serif;
+  color: #997239;
+}
+
+.aboutFirstDiv {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 6.563rem;
+  /* width: 100%; */
+
+}
+
+.aboutFirstDiv span {
+  color: #000000;
+
+}
+
+.aboutFirstDiv p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  line-height: 2.362rem;
+  font-size: 1.938rem;
+  margin-bottom: 2.25rem;
+
+
+}
+
+.aboutFirstDiv img {
+  width: 100%;
+  /* top: 642px;
+  left: 149px; */
+}
+
+/* First Div End */
+.aboutSecDiv {
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 6.25rem;
+
+}
+
+.aboutSecDiv h1 {
+  color: #997239;
+  font-size: 3.438rem;
+  font-family: 'roadstore', sans-serif;
+}
+
+.aboutSecDiv span {
+  color: #000000;
+}
+
+.aboutSecDiv p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  line-height: 2.362rem;
+  font-size: 1.938rem;
+  margin-bottom: 2.25rem;
+  width: 80%;
+
+}
+
+.DivImg {
+  padding-top: 3rem;
+  width: 448px;
+  height: auto;
+}
+
+/* Sec Div End */
+
+.aboutThirdDiv {
+  text-align: right;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 8.75rem;
+}
+
+.aboutThirdDiv h1 {
+  color: #997239;
+  font-size: 3.438rem;
+  font-family: 'roadstore', sans-serif;
+}
+
+.aboutThirdDiv span {
+  color: #000000;
+}
+
+.aboutThirdDiv p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  line-height: 2.362rem;
+  font-size: 1.938rem;
+  margin-bottom: 2.25rem;
+  width: 80%;
+  float: right;
+
+}
+
+#backgroundImage {
+  background-image: url(../media/about/background.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+
+
+}
+
+/* Responsive About */
+
+
+@media (max-width: 1140px) {
+
+  .aboutSecDiv {
+
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+
+  }
+
+  .aboutSecDiv p {
+    width: 100%;
+  }
+
+  .aboutThirdDiv {
+    text-align: center;
+    flex-direction: column;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .aboutThirdDiv p {
+    width: 100%;
+  }
+
+  .DivImg {
+    height: auto;
+    width: 300px;
+
+  }
+}

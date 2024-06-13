@@ -1,0 +1,27 @@
+<!-- getquote.ejs -->
+
+<%- include('../partials/head') %>
+
+<%- include('../partials/body') %>
+
+<!-- Display product details -->
+<div class="row-product">
+    <div class="col-2-product-row">
+        <% product.images.forEach(image => { %>
+            <img src="<%= image.path %>" alt="<%= product.productTitle %>">
+        <% }) %>
+    </div>
+    <div class="col-2-product">
+        <h1><%= product.productTitle %></h1>
+        <p><%= product.productDescription %></p>
+        <ul>
+            <li>Item Number: <%= product.itemNumber %></li>
+            <li>MSRP: <%= product.msrp %></li>
+            <li>Sizes: <%= product.sizes.join(', ') %></li>
+            <li>Color: <%= product.color.join(', ') %></li>
+            <!-- Add more product details here -->
+        </ul>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>

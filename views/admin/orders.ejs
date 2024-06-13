@@ -1,0 +1,30 @@
+<%- include('../partials/head') %>
+
+
+<div class="orders">
+  <h2 class="title">Order Management</h2>
+  <table class="order-table">
+    <thead>
+      <tr>
+        <th>Order ID</th>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>User Contact Details</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% orders.forEach(order => { %>
+        <tr>
+          <td><%= order._id %></td>
+          <td><%= order.product.productTitle %></td>
+          <td><%= order.quantity %></td>
+          <td><%= order.userContactDetails %></td>
+          <td><%= order.status %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+
+<%- include('../partials/body') %>

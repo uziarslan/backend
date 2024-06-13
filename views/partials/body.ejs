@@ -1,0 +1,54 @@
+ 
+ <!-- JavaScript Libraries -->
+ <script>
+    function validatePhoneNumber() {
+        var countryCode = document.getElementById('countryCode').value;
+        var phoneInput = document.getElementById('phone');
+        var phoneRegex = /^[0-9]{10}$/; // Adjust the regex according to your desired phone number format
+        
+        if (phoneRegex.test(phoneInput.value)) {
+            var phoneNumber = countryCode + phoneInput.value;
+            alert("Phone number is valid: " + phoneNumber);
+        } else {
+            alert("Invalid phone number. Please enter a 10-digit number.");
+        }
+    }
+    </script>
+ <script>
+    const passwordField = document.getElementById('password');
+    const togglePasswordButton = document.getElementById('togglePassword');
+
+    togglePasswordButton.addEventListener('click', () => {
+        const type = passwordField.getAttribute('type');
+        passwordField.setAttribute('type', type === 'password' ? 'text' : 'password');
+        
+    });
+    const passwordField1 = document.getElementById('passwordretype');
+    const togglePasswordButton1 = document.getElementById('togglePassword1');
+
+    togglePasswordButton1.addEventListener('click', () => {
+        const type = passwordField1.getAttribute('type');
+        passwordField1.setAttribute('type', type === 'password' ? 'text' : 'password');
+        
+    });
+    function check(){
+        if(passwordField.value!=passwordField1.value){
+            alert("Password Not Matched.")
+        }
+    }
+    
+</script>
+</script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+ <script src="lib/easing/easing.min.js"></script>
+ <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+ <!-- Template Javascript -->
+ <script src="/js/main.js"></script>
+</body>
+</html>

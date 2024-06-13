@@ -1,0 +1,226 @@
+<%- include('../partials/head') %>
+
+    <!-- Topbar Start -->
+    <div class="container-fluid">
+        <p class="text-xl-center fa-2x pt-2"><strong>Welcome to Admin Panel</strong></p>
+        <%- include('../partials/flash') %>
+
+
+
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid">
+        <div class="row border-top px-xl-5">
+            <div class="col-lg-3 d-none d-lg-block">
+
+                <nav class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0"
+                    id="navbar-vertical">
+                    <div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
+
+                        <a href="http://localhost:3000/admin/category" class="nav-item nav-link">Categories</a>
+                        <a href="http://localhost:3000/admin/product" class="nav-item nav-link bg-active">Products</a>
+                        <a href="http://localhost:3000/admin/new-arrivals" class="nav-item nav-link">New Arrival</a>
+                        <a href="http://localhost:3000/admin/trendingproducts" class="nav-item nav-link">Trending</a>
+                        <a href="http://localhost:3000/admin/navbar" class="nav-item nav-link">Navbar</a>
+                        <a href="http://localhost:3000/admin/wholesaletabs" class="nav-item nav-link">WholeSale</a>
+                        <a href="#" class="nav-item nav-link">Orders</a>
+
+                    </div>
+                </nav>
+            </div>
+            <div class="col-lg-9">
+                <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
+                   
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav mr-auto py-0">
+
+                            <div class="burger-menu">
+                                <a class="nav-item nav-link active fa-2x"><strong> Add New Product Here</strong></a>
+                            </div>
+
+                            <div class="burger-menu-tabs">
+                                <a href="http://localhost:3000/admin/category" class="nav-item nav-link ">Categories</a>
+                                <a href="http://localhost:3000/admin/product" class="nav-item nav-link bg-active">Products</a>
+                                <a href="http://localhost:3000/admin/new-arrivals" class="nav-item nav-link">New Arrival</a>
+                                <a href="http://localhost:3000/admin/trendingproducts" class="nav-item nav-link">Trending</a>
+                                <a href="http://localhost:3000/admin/navbar" class="nav-item nav-link ">Navbar</a>
+                                <a href="http://localhost:3000/admin/wholesaletabs" class="nav-item nav-link">WholeSale</a>
+                                <a href="#" class="nav-item nav-link">Orders</a>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </nav>
+                <form action="/admin/product" method="post" class="mt-3 productForm" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col"> <label for="itemNumber">Item Number: </label>
+                            <input type="text" id="itemNumber" name="itemNumber" class="form-control" required>
+                        </div>
+                        <div class="col"><label for="productTitle">Product Title: </label>
+                            <input type="text" id="productTitle" name="productTitle" class="form-control" required>
+                        </div>
+                        <div class="col"><label for="productDescription">Product Description: </label>
+                            <input type="text" id="productDescription" name="productDescription" class="form-control" required>
+                        </div>
+                        <div class="col"> <label for="msrp">MSRP: </label>
+                            <input type="text" id="msrp" name="msrp" class="form-control" required>
+                        </div>
+                        <div class="col"> <label for="sizes">Sizes: </label>
+                            <input type="text" id="sizes" name="sizes" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="row pt-3">
+                        <div class="col"> <label for="sizeRatio">Size Ratio: </label>
+                            <input type="text" id="sizeRatio" name="sizeRatio" class="form-control" required>
+                        </div>
+                        <div class="col"> <label for="color">Color: </label>
+                            <input type="text" id="color" name="color" class="form-control" required>
+                        </div>
+                        <div class="col"> <label for="casePack">Case Pack: </label>
+                            <input type="number" id="casePack" name="casePack" class="form-control" min="0" required>
+                        </div>
+                        <div class="col"> <label for="upc">UPC: </label>
+                            <input type="number" id="upc" name="upc" class="form-control" min="0" required>
+                        </div>
+                    </div>
+                    <div class="row pt-3">
+                        <div class="col">  <label for="category">Category:</label>
+                            <select id="category" name="category" class="form-control" required>
+                                <% categories.forEach((category)=> { %>
+                                    <option name="category" value="<%= category._id %>">
+                                        <%= category.name %>
+                                    </option>
+                                    <% }) %>
+                            </select>
+                        </div>
+                        <div class="col"> <label for="inventory">Inventory: </label>
+                            <input type="text" id="inventory" name="inventory" class="form-control" min="0" required>
+                        </div>
+                        <div class="col"> <label for="images">Images: <span class="image_label">Add atleast 2
+                                    Images</span></label> <br>
+                            <input type="file" id="images" name="images" class="form-control-file" multiple>
+                        </div>
+                        <div class="col">
+
+                            <div class="form-group">
+                                <label for="isNewArrival">New Arrival:</label>
+                                <input type="checkbox" id="isNewArrival" name="isNewArrival" value="true">
+                                <label for="isNewArrival">Yes</label> <br>
+                                <label for="isTrending">Trending:</label>
+                                <input type="checkbox" id="isTrending" name="isTrending" value="true">
+                                <label for="isTrending">Yes</label>
+                            </div>
+                         
+                            <button type="submit" class="btn btn-primary btn_sub w-100">Submit</button>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div class="container-fluid bg-secondary mb-0">
+        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 20px">
+            <h1 class="font-weight-semi-bold text-uppercase mb-3">All Products</h1>
+
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Shop Start -->
+    <div class="container-fluid pt-4 ">
+        <div class="row px-xl-5">
+         
+                    <!-- Shop Product Start -->
+                    <div class="col-lg-12 col-md-12">
+                        <div class="row pb-3">
+                            <div class="col-12 pb-1">
+                                <div class="d-flex align-items-center justify-content-between mb-4">
+
+
+                                </div>
+                            </div>
+
+                            <!-- Product Div Start  -->
+                            <% if (products.length) { %>
+                                <% products.map((product)=> { %>
+                            <div class="col-lg-4 col-md-6 col-sm-12 pb-1">
+                                <div class="card product-item border-0 mb-4">
+                                    <div
+                                        class="card-header product-img position-relative overflow-hidden bg-transparent border p-0" >
+                                        <!-- image Tag  -->
+                                        <% if(product.images.length){ %>
+                                          
+                                                <img class="img-fluid w-100" src="<%=product.images[0].path%>" alt="">
+                                              
+                                                <% } %>
+
+                                    </div>
+                                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+
+                                        <!-- title tag  -->
+
+                                        <h6 class="text-truncate mb-3">
+                                            <%= product.productTitle %>
+                                        </h6>
+
+                                        <!-- Price Tag  -->
+
+                                        <div class="d-flex justify-content-center" style="font-size: 12px; overflow-x: scroll;">
+                                            <p><strong>MSRP:</strong> $<%= product.msrp %></p>
+                                               
+                                           
+                                            
+                                            <p><strong>Sizes:</strong> <%= product.sizes %></p>
+                                            <p><strong>Size Ratio:</strong> <%= product.sizeRatio %></p>
+                                            <p><strong>Color:</strong> <%= product.color %></p>
+                                            <p><strong>Case Pack:</strong> <%= product.casePack %></p>
+                                            <p><strong>UPC:</strong> <%= product.upc %></p>
+                                            <p><strong>Category:</strong> <%= product.category %></p>
+                                            <p><strong>Inventory:</strong> <%= product.inventory %></p>
+                                            <p><strong>Item Number:</strong> <%= product.itemNumber %></p>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-between bg-light border">
+                                        <a href="/admin/product/edit/<%=product._id %>"
+                                            class="btn btn-sm text-dark p-0 editcolor"><i
+                                                class="fas fa-pen pencolor mr-1 fa-1x"></i>Edit</a>
+                                        <form method="post"
+                                            action="/admin/product/delete/<%=product._id %>?_method=DELETE">
+                                            <button type="submit" class="btn btn-sm text-dark p-0"><i class="fas fa-trash trashcolor mr-1 "></i>Delete</button> 
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Product Div End  -->
+                            <% }) %>
+                            <% }  else{ %>
+                                <div class="container-fluid bg-secondary mb-0">
+                                    <div class="d-flex flex-column align-items-center " style="min-height: 20px">
+                                        <h4 class="text-uppercase mb-3">No Products Found!</h4>
+                                    </div>
+                                </div>
+                                <% } %>
+                        </div>
+                    </div>
+                   
+                  
+        </div>
+       
+    </div>
+
+                <%- include('../partials/body') %>

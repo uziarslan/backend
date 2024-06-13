@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Casual Country</title>
+  <link href="/stylesheets/stylehead.css" rel="stylesheet type="text/css">
+  
+  <link href="/stylesheets/home.css" rel="stylesheet type="text/css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@300&display=swap" rel="stylesheet"><!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <!-- Add this in the <head> section of your HTML -->
+
+</head>
+<body>
+  <div class="white-bg">
+
+
+    
+    <nav class="color-bg-12">
+      <center>
+         <button class="hamburger"><i id="icon" class='bx bx-menu hidden'></i></button>
+
+         <div class="nav-items" id="navItem">
+            <ul class="nav-links specificID">
+               <li><a href="/user/home">Home</a></li>
+
+               <% navbars.forEach(navbar=> { %>
+                  <li class="navbar-item">
+                     <a class="navbar-name">
+                        <%= navbar.name %>
+                     </a>
+                     <div class="dropdown">
+                        <ul>
+                           <% navbar.categories.forEach(category=> { %>
+                              <li><a href="/user/showProducts/<%= category._id %>">
+                                    <%= category.name %>
+                                 </a></li> <!-- Use category.name instead of category._id -->
+                              <% }) %>
+                        </ul>
+                     </div>
+                  </li>
+
+                  <% }) %>
+                     <li><a href="/user/aboutus">About Us</a></li>
+                     <li><a href="/user/contactus">Contact us</a></li>
+            </ul>
+            <div id="logoArea" class="swing">
+               <a href="/user/home"><img src="/images/logo.jpg" alt="" height="120px"></a>
+            </div>
+         </div>
+         <!-- dropdownBurger -->
+      <div class="dropDownBurger ">
+         <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">New Arrival</a>
+               <div class="dropdown">
+                  <ul>
+                     <li><a href="#">Kid</a></li>
+                     <li><a href="#">Gents</a></li>
+                  </ul>
+               </div>
+            </li>
+            <li><a href="#">Products</a>
+               <div class="dropdown" id="ho">
+                  <ul>
+                     <li><a href="#">roduct1</a></li>
+                     <li><a href="#">Product2</a></li>
+                     <div class="dropdown-1">
+                        <ul>
+                           <li><a href="#">Type1</a></li>
+                           <li><a href="#">Type2</a></li>
+                           <li><a href="#">Type3</a></li>
+                           <li><a href="#">Type4</a></li>
+                        </ul>
+                     </div>
+                     <li><a href="#">Product3</a></li>
+                     <li><a href="#">Product4</a></li>
+                  </ul>
+               </div>
+            </li>
+            <li><a href="#">About Us</a></li>
+            <li>
+               <form action="#" class="searchForm">
+                  <input type="text" class="search-data" required>
+                  <button type="submit" class="searchButton"><b>Search</b></button>
+               </form>
+            </li>
+            <li>
+               <div class="signupDiv">
+                  <a class="signupA"><b>Sign up </b></a>
+                  <svg width="21" height="21" style="margin-top: 8px;" viewBox="0 0 21 21" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                     <path
+                        d="M10.5 10.5C13.4006 10.5 15.75 8.15063 15.75 5.25C15.75 2.34938 13.4006 0 10.5 0C7.59937 0 5.25 2.34938 5.25 5.25C5.25 8.15063 7.59937 10.5 10.5 10.5ZM10.5 13.125C6.99563 13.125 0 14.8837 0 18.375V21H21V18.375C21 14.8837 14.0044 13.125 10.5 13.125Z"
+                        fill="#6A6A6A" />
+                  </svg>
+               </div>
+            </li>
+         </ul>
+      </div>
+      <!-- dropdownBurgerEnd -->
+      </center>
+      <div class="searchHidden">
+         <form action="/user/search" class="searchForm">
+            <input type="text" class="search-data" name="q" required>
+            <button type="submit" class="searchButton"><b>Search</b></button>
+        </form>
+         <div class="signupDiv">
+            <a class="signuptxt" href="/user/signup" class="signupA"><b>Log in </b></a>
+            <svg width="21" height="21" style="margin-top: 8px;" viewBox="0 0 21 21" fill="none"
+               xmlns="http://www.w3.org/2000/svg">
+               <path
+                  d="M10.5 10.5C13.4006 10.5 15.75 8.15063 15.75 5.25C15.75 2.34938 13.4006 0 10.5 0C7.59937 0 5.25 2.34938 5.25 5.25C5.25 8.15063 7.59937 10.5 10.5 10.5ZM10.5 13.125C6.99563 13.125 0 14.8837 0 18.375V21H21V18.375C21 14.8837 14.0044 13.125 10.5 13.125Z"
+                  fill="#ffffff" />
+            </svg>
+         </div>
+      </div>
+   </nav>

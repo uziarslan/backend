@@ -1,0 +1,47 @@
+<!-- views/admin/signup.ejs -->
+
+<%- include('../partials/loginhead') %>
+    <div class="container1">
+        <div class="login form">
+            <p class="maintext"> User Signup</p>
+            <%- include('../partials/flash') %>
+                <form action="/user/signup" method="post" class="mt-3">
+                    <input type="text" placeholder="First Name" id="Firstname" name="Firstname" required>
+                    <input type="text" placeholder="Last Name" id="Lastname" name="Lastname" required>
+                    <input type="email" placeholder="Email" id="email" name="email" required>
+                    <div class="password-container">
+                        <input type="password" placeholder="Create a password" id="password" name="password" required>
+                        <button type="button" id="togglePassword" class="toggle-password-button">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="password-container">
+                        <input type="password" placeholder="Confirm your password" onchange="check()" id="passwordretype"
+                            name="passwordretype" required>
+                            <button type="button" id="togglePassword1" class="toggle-password-button">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                            <input style="width: 23rem;" id="phone" type="tel" name="phone" />
+
+                            <!-- <form id="login" onsubmit="process(event)">
+                            
+                        </form> -->
+
+
+                  
+
+                    <input type="submit" class="button" value="Signup">
+                </form>
+        </div>
+    </div>
+    <script>
+        const phoneInputField = document.querySelector("#phone");
+        const phoneInput = window.intlTelInput(phoneInputField, {
+            utilsScript:
+                "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        });
+        const info = document.querySelector(".alert-info");
+    </script>
+
+    <%- include('../partials/body') %>

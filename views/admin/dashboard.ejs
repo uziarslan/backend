@@ -1,0 +1,16 @@
+<%- include('../partials/head') %>
+<h1 class="text-center">Admin Dashboard</h1>
+<% if (!user) { %>
+    <p>Welcome, Guest!</p>
+    <div class="text-center">
+        <a href="/admin/login" class="btn btn-primary">Log In</a>
+        <a href="/admin/signup" class="btn btn-secondary">Sign Up</a>
+    </div>
+<% } else { %>
+    <p>Welcome, <%= user.username %>!</p>
+    <div class="text-center">
+        <a href="/admin/products" class="btn btn-primary">Manage Products</a>
+        <a href="/admin/categories" class="btn btn-secondary">Manage Categories</a>
+    </div>
+<% } %>
+<%- include('../partials/body') %>

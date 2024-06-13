@@ -1,0 +1,92 @@
+
+  
+<div class="footercolor">
+  <footer class=" fotterCustom MainFotter">
+     <div class="fotterDivA">
+        <a href="/user/aboutus" class=" footer-label footer-text">About Us</a>
+        <a href="/user/contactus" class=" footer-label footer-text">Contact Us</a>
+        <a href="/user/products" class=" footer-label footer-text">Products</a>
+        <a href="#" class=" footer-label footer-text">Delivery & Return</a>
+
+     </div>
+     <div>
+        <div class="fotterDivB">
+           <ul role="list" class=" fotterUL">
+              <li class="fotterLi">
+                 <a href="#" target="_blank" >
+                    <img src="/media/facebook.svg" alt="" >
+                 </a>
+              </li>
+              <li class="fotterLi">
+               <a href=" #" target="_blank" >
+                 <img src="/media/twitter.png" width="55.47px" height="55.47px" alt="" >
+                 </a>
+              </li>
+              <li class="fotterLi" >
+              <a href=" #" target="_blank" >
+                 <img src="/media/youtube.png" width="55.47px" height="55.47px" alt="" >
+                 </a>
+              </li>
+              <li class="fotterLi">
+                 <a href="#" target="_blank" >
+                    <img src="/media/instagram.svg" alt="" >
+                 </a>
+              </li>
+           </ul>
+        </div>
+     </div>
+  </footer>
+  <div class="div-block-20"></div>
+  <p class="fotterCopyRight">Copyright @ 2016 All Rights Reserved</p>
+  <div class="horizental Grass ">
+     <img class="grassIMG" src="/media/grass.svg" alt="">
+     <img class="grassIMG" src="/media/grass.svg" alt="">
+     <img class="grassIMG" src="/media/grass.svg" alt="">
+     <img class="grassIMG" src="/media/grass.svg" alt="">
+     <img class="grassIMG" src="/media/grass.svg" alt="">
+     <img class="grassIMG" src="/media/grass.svg" alt="">
+     <img class="grassIMG" src="/media/grass.svg" alt="">
+     <img class="grassIMG" src="/media/grass.svg" alt="">
+     <img class="grassIMG" src="/media/grass.svg" alt="">
+     <img class="grassIMG" src="/media/grass.svg" alt="">
+     <img class="grassIMG" src="/media/grass.svg" alt="">
+     <img class="grassIMG" src="/media/grass.svg" alt="">
+  </div>
+</div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 4,
+      spaceBetween: 10,
+      autoplay: {
+        delay: 1500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
+  <script>
+   function increment() {
+      document.getElementById('demoInput').stepUp();
+   }
+   function decrement() {
+      document.getElementById('demoInput').stepDown();
+   }
+   const toggleBtn = document.querySelector('.hamburger')
+   const toggleBtnIcon = document.querySelector('.hamburger i')
+   const dropDownMenu = document.querySelector('.dropDownBurger')
+   toggleBtn.onclick = function () {
+      dropDownMenu.classList.toggle('open')
+      const isOpen = dropDownMenu.classList.contains('open')
+   }
+</script>
+</body>
+
+</html> 

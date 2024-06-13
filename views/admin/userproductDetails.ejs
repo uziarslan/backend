@@ -1,0 +1,189 @@
+<%- include('../partials/headerhead') %>
+    <%- include('../partials/producthead') %>
+
+        <form class="row-product" action="/user/home" method="GET">
+            <div class="col-2-product-row">
+
+                <div class="col-2-product-small">
+                    <% product.images.forEach(image=> { %>
+                        <img src="<%= image.path %>" alt="<%= product.productTitle %>">
+                        <% }) %>
+
+                </div>
+                <div class="col-2-product-large">
+                    <% if(product.images.length){ %>
+                        <img src="<%=product.images[0].path%>" alt="<%= product.productTitle %>">
+                        <% } %>
+                </div>
+            </div>
+
+
+
+            <div class="col-2-product">
+                <div class="col-2-product-size">
+
+
+                    <h1>
+                        <%= product.productTitle %>
+                    </h1> <br>
+                    <p>
+                        <%= product.productDescription %>
+                    </p> <br>
+
+                    <hr> <br>
+                    <div class="cat">
+                        <div class="col-small-1">
+                            <ul>
+                                <li>
+                                    Category
+                                </li>
+                                <li>
+                                    Color
+                                </li>
+                                <li>
+                                    Size
+                                </li>
+                                <li>Quantity</li>
+                            </ul>
+                        </div>
+                        <div class="col-small-2">
+                            <ul>
+                                <li>
+                                    <%= product.category %>
+                                </li>
+                                <li class="c-bar">
+                                <% product.color.map((c,i) =>{ %>
+                                    <div style="background-color: <%=c%>;" class="colorDisplay" id="demo<%=i%>" onclick="colorvalue('<%=c%>', 'demo<%=i%>')"></div>
+                                <%}) %>
+
+                                    <input name="color" type="text" value="" id="silentInput" class="silentInput">
+                                
+                                </li>
+                                <li>
+                                    <div class="s-bar">
+                                        <ul class="ull">
+                                            <% product.sizes.map((s,i) =>{ %>
+                                            <li class="lii">
+                                                <input type="checkbox" id="check_<%=i%>" name="size" value="check_1">
+                                                <label onclick="setinventory('<%=product.inventory[i]%>')" for="check_<%=i%>"><%=s%></label>
+                                            </li>
+                                            <%}) %>
+                                           
+                                        </ul>
+                                    </div>
+
+                                </li>
+                                <li>
+                                    <div class="q-bar">
+
+
+                                        <button type="button" class="btn--" onclick="decrement()"><i class="fa fa-angle-left c"
+                                                aria-hidden="true"></i></button>
+                                        <input class="inputquantity" onblur="valueCheck()" id="demoInput" type="number">
+                                        <button type="button" class="btn--" onclick="increment()"><i class="fa fa-angle-right c"
+                                                aria-hidden="true"></i></button>
+
+                                </li>
+                        </div>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr style="width: 50%;">
+                <button class="btn-1" type="submit"> GET Quotation</button>
+
+
+            </div>
+        </form>
+
+
+        <div class="categories" style="margin-top: -2.5rem; margin-bottom: 0; padding-bottom: 20px;">
+            <div class="small-container">
+                <h2 class="title">Related <span class="title-new">Products</span></h2>
+                <div class="row">
+
+                    <!-- Swiper -->
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <% relatedProducts.forEach(product=> { %>
+                                <div class="swiper-slide" style="background-color: rgba(255, 0, 0, 0)">
+                                    <a href="/user/product/<%= product._id %>">
+                                        <img class="image-slide" src="<%= product.images[0].path %>"
+                                            alt="<%= product.productTitle %>">
+                                        <h4>
+                                            <%= product.productTitle %>
+                                        </h4>
+                                    </a>
+                                </div>
+                                <% }) %>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+        </div>
+
+
+
+        <script>
+            
+           
+
+
+
+
+
+            function colorvalue(color1, id){
+                document.getElementById("silentInput").setAttribute("value", color1);
+                let demo1 = document.querySelectorAll(".slectedcolor");
+            demo1.forEach((element, i) => {
+                element.classList.remove("slectedcolor")
+            });
+
+                let color = document.getElementById(id).classList.add('slectedcolor'); 
+                
+            }
+            
+            var inputElement = document.getElementById("demoInput");
+            inputElement.min = 1;
+           
+function setinventory(countinventory){
+    document.getElementById("demoInput").max=countinventory
+
+}
+            function valueCheck() {
+                var inputValue = parseFloat(inputElement.value); // Parse input value as a number
+                var maxValue = '<%=product.inventory%>'; // This assumes product.inventory holds the maximum value
+
+                if (inputValue > maxValue) {
+                    inputElement.value = maxValue; // Set the input value to the maximum value
+                }
+                if (inputValue < 1) {
+                    inputElement.value = 1; // Set the input value to the maximum value
+                }
+            }
+
+            const checkboxes = document.querySelectorAll(".lii input[type='checkbox']");
+
+            // When a checkbox is clicked, check it and uncheck all other checkboxes
+            checkboxes.forEach((checkbox) => {
+                checkbox.addEventListener("click", () => {
+                    checkboxes.forEach((otherCheckbox) => {
+                        otherCheckbox.checked = false;
+                    });
+                    checkbox.checked = true;
+                });
+            });
+
+</script>
+
+
+
+
+
+
+        <%- include('../partials/headerbody') %>

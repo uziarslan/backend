@@ -1,0 +1,86 @@
+<%- include('../partials/head') %>
+    <!-- Topbar Start -->
+    <div class="container-fluid">
+        <p class="text-xl-center fa-2x pt-2"><strong>Welcome to Admin Panel</strong></p>
+        <%- include('../partials/flash') %>
+
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar Start -->
+    <div class="container-fluid">
+        <div class="row border-top px-xl-5">
+            <div class="col-lg-3 d-none d-lg-block">
+
+                <nav class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0"
+                    id="navbar-vertical">
+                    <div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
+
+                        <a href="http://localhost:3000/admin/category"
+                            class="nav-item nav-link bg-active">Categories</a>
+                        <a href="http://localhost:3000/admin/product" class="nav-item nav-link ">Products</a>
+                        <a href="http://localhost:3000/admin/new-arrivals" class="nav-item nav-link">New Arrival</a>
+                        <a href="http://localhost:3000/admin/trendingproducts" class="nav-item nav-link">Trending</a>
+                        <a href="http://localhost:3000/admin/navbar" class="nav-item nav-link">Navbar</a>
+                        <a href="http://localhost:3000/admin/wholesaletabs" class="nav-item nav-link">WholeSale</a>
+                        <a href="#" class="nav-item nav-link">Orders</a>
+
+                    </div>
+                </nav>
+            </div>
+            <div class="col-lg-9">
+                <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
+
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav mr-auto py-0">
+
+                            <div class="burger-menu">
+
+
+                                <a class="nav-item nav-link active fa-2x"><strong> Edit Categories Name From
+                                        Here</strong></a>
+
+                            </div>
+
+                            <div class="burger-menu-tabs">
+                                <a href="http://localhost:3000/admin/category"
+                                    class="nav-item nav-link bg-active">Categories</a>
+                                <a href="http://localhost:3000/admin/product" class="nav-item nav-link ">Products</a>
+                                <a href="http://localhost:3000/admin/new-arrivals" class="nav-item nav-link">New
+                                    Arrival</a>
+                                <a href="http://localhost:3000/admin/trendingproducts"
+                                    class="nav-item nav-link">Trending</a>
+                                <a href="http://localhost:3000/admin/navbar" class="nav-item nav-link">Navbar</a>
+                                <a href="http://localhost:3000/admin/wholesaletabs"
+                                    class="nav-item nav-link">WholeSale</a>
+                                    <a href="#" class="nav-item nav-link">Orders</a>
+                            </div>
+
+
+
+
+                        </div>
+
+                    </div>
+                </nav>
+                <form class="categoryForm" method="post" action="/admin/category/edit/<%=category._id %>?_method=PUT">
+                    <div class="row">
+                        <div class="col"> <label for="itemNumber">Enter Category Name </label>
+                            <input name="category" value="<%=category.name%>" type="text" class="categoryInput"
+                                placeholder="Shirts..." required>
+                            <button type="submit" class="btn btn-outline-success">Update</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+
+    <%- include('../partials/body') %>

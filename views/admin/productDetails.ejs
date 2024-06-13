@@ -1,0 +1,27 @@
+<%- include('../partials/head') %>
+<h1 class="text-center">Product Details</h1>
+<div class="productDetails">
+<%= products.map((product) => { %>
+        <h3><%= product.productTitle %></h3>
+        <p><strong>Item Number:</strong> <%= product.itemNumber %></p>
+        <p><strong>MSRP:</strong> <%= product.msrp %></p>
+        <p><strong>Sizes:</strong> <%= product.sizes %></p>
+        <p><strong>Size Ratio:</strong> <%= product.sizeRatio %></p>
+        <p><strong>Color:</strong> <%= product.color %></p>
+        <p><strong>Case Pack:</strong> <%= product.casePack %></p>
+        <p><strong>UPC:</strong> <%= product.upc %></p>
+        <p><strong>Category:</strong> <%= product.category %></p>
+        <p><strong>Inventory:</strong> <%= product.inventory %></p>
+        <strong>Images:</strong>
+        <div class="productImages">
+            <% if (product.images && product.images.length) { %>
+                <% product.images.forEach({path} => { %>
+                    <img src="<%= path %>" alt="Product Image">
+                <% }) %>
+            <% } else { %>
+                <p>No images available</p>
+            <% } %>
+        </div>
+        <% }) %>
+    </div>
+<%- include('../partials/body') %>

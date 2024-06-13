@@ -1,0 +1,62 @@
+<%- include('../partials/homepage') %>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-2">
+        <!-- <p class="headtext"> CASUAL <span class="country"> COUNTRY </span> OUTFITTERS</p> -->
+      </div>
+      <div class="col-9">
+        <img class="image12" src="/images/cowboy.png" alt="Hero Cover">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- New Arrival Products Start  -->
+  <div class="categories">
+    <div class="small-container">
+      <h2 class="title">New <span class="title-new">Arrivals</span></h2>
+      <div class="row">
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <% newArrivals.forEach(product=> { %>
+              <div class="swiper-slide"> <a href="/user/product/<%= product._id %>"> <img class="image-slide"
+                    src="<%= product.images[0].path %>" alt="<%= product.productTitle %>">
+                  <h4>
+                    <%= product.productTitle %>
+                  </h4>
+                </a></div>
+              <% }) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+<!-- Products Start  -->
+<div class="small-container" >
+  <h2 class="title">Trending</h2>
+  <div class="row">
+    <!-- Product Container Start  -->
+    <% trendingProducts.forEach(product=> { %>
+      <a href="/user/product/<%= product._id %>">
+        <div class="col-4">
+          <img class="image-size" src="<%= product.images[0].path %>" alt="<%= product.productTitle %>">
+          <h4>
+            <%= product.productTitle %>
+          </h4>
+          <!-- Rating display removed -->
+
+        </div>
+        <% }) %>
+
+  </div>
+</div>
+
+
+
+
+    <%- include('../partials/headerbody') %>
